@@ -18,10 +18,6 @@ namespace Ferrari_7_Automobile_form
             {
                 labelOnOff.Text = "Accesa";
             }
-            else
-            {
-                labelOnOff.Text = "Spenta";
-            }
         }
 
         private void buttonUpShift_Click(object sender, EventArgs e)
@@ -30,6 +26,7 @@ namespace Ferrari_7_Automobile_form
             if (response == 1)
             {
                 labelGear.Text = Car.gear.ToString();
+                labelRpms.Text = Car.rpms.ToString();
             }
         }
 
@@ -39,6 +36,7 @@ namespace Ferrari_7_Automobile_form
             if (response == 1)
             {
                 labelGear.Text = Car.gear.ToString();
+                labelRpms.Text = Car.rpms.ToString();
             }
         }
 
@@ -47,6 +45,7 @@ namespace Ferrari_7_Automobile_form
             int response = Car.Accelera();
             if (response == 1)
             {
+                labelRpms.Text = Car.rpms.ToString();
                 labelSpeed.Text = Car.speed.ToString();
             }
         }
@@ -56,7 +55,17 @@ namespace Ferrari_7_Automobile_form
             int response = Car.Frena();
             if (response == 1)
             {
+                labelRpms.Text = Car.rpms.ToString();
                 labelSpeed.Text = Car.speed.ToString();
+            }
+        }
+
+        private void buttonOff_Click(object sender, EventArgs e)
+        {
+            int respone = Car.SpegniAuto();
+            if (Car.onOff)
+            {
+                labelOnOff.Text = "Spenta";
             }
         }
     }

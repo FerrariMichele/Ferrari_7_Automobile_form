@@ -37,6 +37,9 @@
             this.labelGear = new System.Windows.Forms.Label();
             this.labelOnOff = new System.Windows.Forms.Label();
             this.buttonOff = new System.Windows.Forms.Button();
+            this.labelRpms = new System.Windows.Forms.Label();
+            this.labelVelo = new System.Windows.Forms.Label();
+            this.labelGiri = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonBrake
@@ -93,7 +96,7 @@
             // 
             this.labelSpeed.AutoSize = true;
             this.labelSpeed.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSpeed.Location = new System.Drawing.Point(152, 141);
+            this.labelSpeed.Location = new System.Drawing.Point(91, 187);
             this.labelSpeed.Name = "labelSpeed";
             this.labelSpeed.Size = new System.Drawing.Size(106, 65);
             this.labelSpeed.TabIndex = 5;
@@ -115,9 +118,9 @@
             this.labelOnOff.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelOnOff.Location = new System.Drawing.Point(603, 194);
             this.labelOnOff.Name = "labelOnOff";
-            this.labelOnOff.Size = new System.Drawing.Size(64, 45);
+            this.labelOnOff.Size = new System.Drawing.Size(118, 45);
             this.labelOnOff.TabIndex = 7;
-            this.labelOnOff.Text = "Off";
+            this.labelOnOff.Text = "Spenta";
             // 
             // buttonOff
             // 
@@ -127,12 +130,46 @@
             this.buttonOff.TabIndex = 8;
             this.buttonOff.Text = "Spegnimento";
             this.buttonOff.UseVisualStyleBackColor = true;
+            this.buttonOff.Click += new System.EventHandler(this.buttonOff_Click);
+            // 
+            // labelRpms
+            // 
+            this.labelRpms.AutoSize = true;
+            this.labelRpms.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRpms.Location = new System.Drawing.Point(294, 187);
+            this.labelRpms.Name = "labelRpms";
+            this.labelRpms.Size = new System.Drawing.Size(106, 65);
+            this.labelRpms.TabIndex = 9;
+            this.labelRpms.Text = "000";
+            // 
+            // labelVelo
+            // 
+            this.labelVelo.AutoSize = true;
+            this.labelVelo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVelo.Location = new System.Drawing.Point(74, 252);
+            this.labelVelo.Name = "labelVelo";
+            this.labelVelo.Size = new System.Drawing.Size(132, 45);
+            this.labelVelo.TabIndex = 10;
+            this.labelVelo.Text = "Velocità";
+            // 
+            // labelGiri
+            // 
+            this.labelGiri.AutoSize = true;
+            this.labelGiri.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGiri.Location = new System.Drawing.Point(308, 252);
+            this.labelGiri.Name = "labelGiri";
+            this.labelGiri.Size = new System.Drawing.Size(69, 45);
+            this.labelGiri.TabIndex = 11;
+            this.labelGiri.Text = "Giri";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelGiri);
+            this.Controls.Add(this.labelVelo);
+            this.Controls.Add(this.labelRpms);
             this.Controls.Add(this.buttonOff);
             this.Controls.Add(this.labelOnOff);
             this.Controls.Add(this.labelGear);
@@ -160,5 +197,8 @@
         private Label labelGear;
         private Label labelOnOff;
         private Button buttonOff;
+        private Label labelRpms;
+        private Label labelVelo;
+        private Label labelGiri;
     }
 }

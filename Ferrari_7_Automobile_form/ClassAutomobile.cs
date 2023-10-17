@@ -10,12 +10,15 @@ namespace Ferrari_7_Automobile_form
     {
         protected int _speed;
         protected int _gear;
+        protected int _rpms;
         protected bool _onOff;
+        protected int _numeroMarce;
 
         public ClassAutomobile()
         {
             _speed = 0;
             _gear = 0;
+            _rpms = 0;
             _onOff = false;
         }
         public int speed
@@ -27,6 +30,11 @@ namespace Ferrari_7_Automobile_form
         {
             get { return _gear; }
             set { _gear = value; }
+        }
+        public int rpms
+        {
+            get { return _rpms; }
+            set { _rpms = value; }
         }
         public bool onOff
         {
@@ -53,9 +61,10 @@ namespace Ferrari_7_Automobile_form
         }
         public int Accelera()
         {
-            if (onOff && gear > 0 && speed/30 <= gear)
+            if (onOff && gear > 0 && rpms < 6000)
             {
-                speed += 30;
+                rpms += 2000;
+                speed = ((rpms * gear) / 100) / 2;
                 return 1;
             }
             return 0;
@@ -64,18 +73,25 @@ namespace Ferrari_7_Automobile_form
         {
             if (onOff && speed > 0)
             {
-                speed -= 30;
+                rpms -= 2000;
+                speed = ( (rpms * gear) / 100 ) / 2;
                 return 1;
             }
             return 0;
         }
         public int AumentaMarcia()
         {
-            if (onOff && gear < 6)
+            if (onOff)
             {
-                if (speed/30 == gear)
+                if (gear == 0)
                 {
                     gear++;
+                    return 1;
+                }
+                else if (gear < 6 && rpms == 6000)
+                {
+                    gear++;
+                    rpms = 2000;
                     return 1;
                 }
             }
@@ -83,13 +99,11 @@ namespace Ferrari_7_Automobile_form
         }
         public int DiminuisciMarcia()
         {
-            if (onOff && gear > 0)
+            if (onOff && gear > 0 && rpms == 2000)
             {
-                if (speed / 30 < gear)
-                {
-                    gear++;
-                    return 1;
-                }
+                gear--;
+                rpms = 4000;
+                return 1;
             }
             return 0;
         }
