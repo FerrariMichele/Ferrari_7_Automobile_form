@@ -55,7 +55,41 @@ namespace Ferrari_7_Automobile_form
         {
             if (onOff && gear > 0)
             {
-
+                speed += 30;
+                return 1;
+            }
+            return 0;
+        }
+        public int Frena()
+        {
+            if (onOff && speed > 0)
+            {
+                speed -= 30;
+                return 1;
+            }
+            return 0;
+        }
+        public int AumentaMarcia()
+        {
+            if (onOff && gear < 6)
+            {
+                if (speed/30 == gear)
+                {
+                    gear++;
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        public int DiminuisciMarcia()
+        {
+            if (onOff && gear > 0)
+            {
+                if (speed / 30 == gear)
+                {
+                    gear++;
+                    return 1;
+                }
             }
             return 0;
         }
