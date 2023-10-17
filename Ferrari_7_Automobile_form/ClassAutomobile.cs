@@ -99,11 +99,14 @@ namespace Ferrari_7_Automobile_form
         }
         public int DiminuisciMarcia()
         {
-            if (onOff && gear > 0 && rpms == 2000)
+            if (onOff)
             {
-                gear--;
-                rpms = 4000;
-                return 1;
+                if (gear > 0 && rpms == 2000)
+                {
+                    gear--;
+                    rpms = 6000;
+                    return 1;
+                }
             }
             return 0;
         }
