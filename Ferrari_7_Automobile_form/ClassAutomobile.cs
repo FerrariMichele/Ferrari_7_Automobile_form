@@ -53,7 +53,7 @@ namespace Ferrari_7_Automobile_form
         }
         public int Accelera()
         {
-            if (onOff && gear > 0)
+            if (onOff && gear > 0 && speed/30 <= gear)
             {
                 speed += 30;
                 return 1;
@@ -85,7 +85,7 @@ namespace Ferrari_7_Automobile_form
         {
             if (onOff && gear > 0)
             {
-                if (speed / 30 == gear)
+                if (speed / 30 < gear)
                 {
                     gear++;
                     return 1;
